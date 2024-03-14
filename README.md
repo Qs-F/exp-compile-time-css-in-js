@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+# Experimental CSS in JS at compile time
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Using macro concept by Parcel
 
-Currently, two official plugins are available:
+## Why
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Compile time computation is a advanced stage of two-stage programming, with regard to multi-stage programming (or partial evaluation). We can estimate Next.js SSG, SSR, React's RSC, and CSS in JS are all the same thing in terms of optimization. Thus what exactly we need here is only multi-stage programming concept for JS. It enables us to use the concept of delimited continuations, a.k.a. suspend / resume.
 
-## Expanding the ESLint configuration
+## Thanks
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+https://twitter.com/devongovett/status/1752928009198158191
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
